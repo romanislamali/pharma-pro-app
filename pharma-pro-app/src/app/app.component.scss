@@ -1,0 +1,41 @@
+
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+}
+
+.content-area {
+  flex: 1;
+  padding: 20px;
+  background-color: #eb8a8a;
+  transition: margin-left 0.3s ease;
+
+  &.full-width {
+    margin-left: 75px !important;
+  }
+}
+
+/* Adjust content margin based on sidebar */
+@media (min-width: 769px) {
+  .content-area {
+    margin-left: 285px;
+  }
+
+  .content-area.full-width {
+    margin-left: 0;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .content-area {
+    margin-left: 0;
+  }
+}
