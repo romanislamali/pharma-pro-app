@@ -1,36 +1,65 @@
-<aside class="app-sidebar" [class.closed]="!isSidebarOpen">
+<aside
+  class="fixed left-0 h-full bg-cyan-50 border-r-2 text-black transition-all duration-300 ease-in-out overflow-y-auto z-50"
+  [ngClass]="{
+    'w-[285px] p-5': isSidebarOpen,
+    'w-[70px] p-2.5 pt-5': !isSidebarOpen,
+    'translate-x-0': isSidebarOpen,
+    '-translate-x-full md:translate-x-0': !isSidebarOpen
+  }"
+>
   <!-- Sidebar Header -->
-  <div class="sidebar-header">
-    <div class="logo">
-      <img src="assets/icon/medicine.png" alt="Logo" (click)="toggle.emit()"/>
-      <span *ngIf="isSidebarOpen" class="sidebar-title">PHARMA PRO</span>
+  <div class="flex justify-between items-center mb-7">
+    <div class="flex items-center gap-2.5">
+      <img src="assets/icon/medicine.png" alt="Logo" class="h-[50px] w-[50px]" (click)="toggle.emit()" />
+      <span *ngIf="isSidebarOpen" class="text-lg font-bold">PHARMA PRO</span>
     </div>
-    <button class="toggle-btn" (click)="toggle.emit()">&#9776;</button>
+    <button
+      *ngIf="isSidebarOpen"
+      class="text-black text-2xl cursor-pointer"
+      (click)="toggle.emit()"
+    >
+      &#9776;
+    </button>
   </div>
 
   <!-- Sidebar Menu -->
-  <ul class="sidebar-menu">
-    <li>
-      <a routerLink="/">
-        <img src="assets/icon/dashboard.png" class="menu-icon" />
+  <ul class="list-none p-0 border-t-2">
+    <li class="my-4">
+      <a
+        routerLink="/"
+        class="flex items-center gap-2.5 text-black text-base px-2 py-2 rounded-md hover:bg-white transition-colors"
+      >
+        <img src="assets/icon/dashboard.png" class="h-[30px] w-[30px]" />
         <span *ngIf="isSidebarOpen">Dashboard</span>
       </a>
     </li>
-    <li>
-      <a routerLink="/about">
-        <img src="assets/icon/sales.png" class="menu-icon" />
+
+    <li class="my-4">
+      <a
+        routerLink="/about"
+        class="flex items-center gap-2.5 text-black text-base px-2 py-2 rounded-md hover:bg-white transition-colors"
+      >
+        <img src="assets/icon/sales.png" class="h-[30px] w-[30px]" />
         <span *ngIf="isSidebarOpen">Sales</span>
       </a>
     </li>
-    <li>
-      <a routerLink="/contact">
-        <img src="assets/icon/purchases.png" class="menu-icon" />
+
+    <li class="my-4">
+      <a
+        routerLink="/contact"
+        class="flex items-center gap-2.5 text-black text-base px-2 py-2 rounded-md hover:bg-white transition-colors"
+      >
+        <img src="assets/icon/purchases.png" class="h-[30px] w-[30px]" />
         <span *ngIf="isSidebarOpen">Purchases</span>
       </a>
     </li>
-    <li>
-      <a routerLink="/contact">
-        <img src="assets/icon/products.png" class="menu-icon" />
+
+    <li class="my-4">
+      <a
+        routerLink="/contact"
+        class="flex items-center gap-2.5 text-black text-base px-2 py-2 rounded-md hover:bg-white transition-colors"
+      >
+        <img src="assets/icon/products.png" class="h-[30px] w-[30px]" />
         <span *ngIf="isSidebarOpen">Products</span>
       </a>
     </li>
