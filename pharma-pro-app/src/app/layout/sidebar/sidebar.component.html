@@ -26,7 +26,7 @@
   <ul class="list-none p-0 border-t-2">
     <li class="my-4">
       <a
-        routerLink="/"
+        routerLink="/dashboard"
         class="flex items-center gap-2.5 text-black text-base px-2 py-2 rounded-md hover:bg-white transition-colors"
       >
         <img src="assets/icon/dashboard.png" class="h-[30px] w-[30px]" />
@@ -61,6 +61,16 @@
       >
         <img src="assets/icon/products.png" class="h-[30px] w-[30px]" />
         <span *ngIf="isSidebarOpen">Products</span>
+      </a>
+    </li>
+
+    <li class="my-4">
+      <a
+        routerLink="/users"
+        class="flex items-center gap-2.5 text-black text-base px-2 py-2 rounded-md hover:bg-white transition-colors"
+      >
+        <img src="assets/icon/users.png" class="h-[30px] w-[30px]" />
+        <span *ngIf="isSidebarOpen">Users</span>
       </a>
     </li>
   </ul>
